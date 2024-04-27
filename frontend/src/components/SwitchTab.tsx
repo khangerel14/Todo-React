@@ -4,7 +4,7 @@ import React from 'react'
 import Oppo from '@/images/Oppo'
 import Down from '@/images/Down'
 
-const SwitchTab = () => {
+export const SwitchTab = () => {
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex justify-between items-center'>
@@ -28,5 +28,3 @@ const SwitchTab = () => {
     </div>
   )
 }
-
-export default SwitchTab

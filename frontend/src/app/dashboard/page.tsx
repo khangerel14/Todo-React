@@ -1,12 +1,14 @@
 "use client"
-import Aside from "@/components/Aside"
-import Drawstack from "@/components/Drawstack"
+import { Navbar, Aside, Drawstack } from "../../components/index"
 
 const Dashboard = () => {
   return (
-    <div className="flex max-w-screen-xl mx-auto">
+    <div>
+      <Navbar />
+      <div className="flex mx-auto max-w-screen-xl">
         <Aside />
         <Drawstack />
+      </div>
     </div>
   )
 }

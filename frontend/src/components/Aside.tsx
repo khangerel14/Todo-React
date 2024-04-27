@@ -12,14 +12,10 @@ import Person from '@/images/Person'
 import Plus from '@/images/Plus'
 import Menu from '@/images/Menu'
 
-const Aside = () => {
+export const Aside = () => {
   return (
-    <div className='flex flex-col w-[256px] p-3 gap-12'>
+    <div className='flex flex-col w-[256px] gap-12'>
         <div className='flex flex-col gap-4'>
-            <div className='flex gap-3 items-center'>
-                <Icon />
-                <h1 className='text-2xl font-semibold'>Todo app</h1>
-            </div>
             <hr />
             <div className='flex gap-3 items-center'>
                 <User />
@@ -29,28 +25,26 @@ const Aside = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-5 items-start'>
-                <button className='flex gap-3 items-center'><Inbox /> Inbox</button>
-                <button className='flex gap-3 items-center'><Today />Today</button>
-                <button className='flex gap-3 items-center'><Calendar />Upcoming</button>
-                <button className='flex gap-3 items-center'><Clock />Anytime</button>
-                <button className='flex gap-3 items-center'><Inbox /> Someday</button>
-                <button className='flex gap-3 items-center'><Trash /> Trash</button>
+                <button className='flex gap-5 items-center'><Inbox /> Inbox</button>
+                <button className='flex gap-5 items-center'><Today />Today</button>
+                <button className='flex gap-5 items-center'><Calendar />Upcoming</button>
+                <button className='flex gap-5 items-center'><Clock />Anytime</button>
+                <button className='flex gap-5 items-center'><Inbox /> Someday</button>
+                <button className='flex gap-5 items-center'><Trash /> Trash</button>
             </div>
         </div>
         <div className='flex flex-col gap-6 items-start'>
             <h1>Your Projects</h1>
             <div className='flex flex-col items-start gap-5'>
-                <button className='flex gap-3 items-center'><Person />Personal</button>
-                <button className='flex gap-3 items-center'><Works />Works</button>
-                <button className='flex gap-3 items-center'><Users />Drawstack</button>
+                <button className='flex gap-5 items-center'><Person />Personal</button>
+                <button className='flex gap-5 items-center'><Works />Works</button>
+                <button className='flex gap-5 items-center'><Users />Drawstack</button>
             </div>
             <div className='flex justify-between w-full items-center'>
-                <button className='flex gap-3 items-center'><Plus /> New list</button>
+                <button className='flex gap-5 items-center'><Plus /> New list</button>
                 <button><Menu /></button>
             </div>
         </div>
     </div>
   )
 }
-
-export default Aside
