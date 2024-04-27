@@ -4,7 +4,7 @@ import { Request, Response } from "express"
 export const getAllTodo = async (req: Request, res: Response) => {
     try {
         const todos = await TodoModel.find()
-        return res.status(200).send({ success: true, todos })
+        return res.status(200).send( todos )
     } catch (error) {
         throw new Error(JSON.stringify(error))
     }

@@ -7,12 +7,14 @@ const TodoSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
-
     priority: {
         type: String,
         enum: ['HIGH', 'MEDIUM', 'LOW'],
     },
-    label: String,
+    status: {
+        type: String,
+        enum: ['Todo', 'InProgress', 'Completed']
+    }
 });
 
 const TodoModel = mongoose.model('TODO', TodoSchema);
