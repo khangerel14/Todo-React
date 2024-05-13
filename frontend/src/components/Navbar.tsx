@@ -1,4 +1,6 @@
-import Icon from "@/images/Icon"
+'use client';
+
+import Icon from "@/images/Icon";
 
 export const Navbar = () => {
   return (
