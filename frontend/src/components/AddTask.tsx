@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export const AddTask = () => {
@@ -8,7 +8,7 @@ export const AddTask = () => {
     const [ priority, setPriority ] = useState("HIGH")
     const [ status, setStatus ] = useState('Todo')
     const addPost = async () => {
-        const res = await axios.post("http://localhost:8000/todo", {
+        const res = await axios.post("http://localhost:8000/todo/create", {
             title: title,
             description: description,
             priority: priority,
