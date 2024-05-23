@@ -10,7 +10,6 @@ export const Navbar = () => {
         <h1 className='text-2xl font-semibold'>Todo app</h1>
       </div>
       <div className="flex gap-6 items-center text-2xl font-semibold">
-        <button className="hover:scale-125 transition ease-in">Post</button>
         <button className="hover:scale-125 transition ease-in">Archived</button>
         <button className="hover:scale-125 transition ease-in">Update</button>
       </div>

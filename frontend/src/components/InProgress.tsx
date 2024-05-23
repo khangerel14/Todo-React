@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Plus from "@/images/Plus";
 import { useState } from "react";
 import { AddTask } from "./index"
-import axios from "axios";
 
 export const InProgress = ({ todoData }: any) => {
     const [ modal, setModal ] = useState(false);
@@ -17,6 +16,16 @@ export const InProgress = ({ todoData }: any) => {
         }
         return todoData?.filter((e: any) => e.status === 'InProgress').length
     }
+    const deleteItem = async (id: string) => {
+        try {
+            const res = await fetch(``, { method: 'DELETE' })
+            if (res.ok) {
+                console.log('deleted successfully');
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
     useEffect(() => {
         getNumberOfInProgress()
     }, [])
@@ -28,16 +37,19 @@ export const InProgress = ({ todoData }: any) => {
             </div>
             { todoData && todoData.filter((e: any) => e.status === 'InProgress').map((e: any, index: number) => {
                 return (
-                    <div className="border bg-white rounded-lg p-2 px-4" key={index}>
-                        <h1 className="font-semibold">title: {e.title}</h1>
-                        <p>description: {e.description}</p>
-                        <div className="flex items-center gap-2 font-semibold">priority:
-                            <h1 className="p-1 px-2 rounded-xl text-white" style={{ backgroundColor: e.priority === 'HIGH' ? '#EC0B0B' : e.priority === 'MEDIUM' ? '#FF9300' : e.priority === 'LOW' ? '#009510' : '' }}>{e.priority}</h1>
+                    <div className="flex justify-between items-start border bg-white rounded-lg p-2 px-4" key={index}>
+                        <div className="flex flex-col">
+                            <h1 className="font-semibold">title: {e.title}</h1>
+                            <p>description: {e.description}</p>
+                            <div className="flex items-center gap-2 font-semibold">priority:
+                                <h1 className="p-1 px-2 rounded-xl text-white" style={{ backgroundColor: e.priority === 'HIGH' ? '#EC0B0B' : e.priority === 'MEDIUM' ? '#FF9300' : e.priority === 'LOW' ? '#009510' : '' }}>{e.priority}</h1>
+                            </div>
                         </div>
+                        <button onClick={() => deleteItem(e.id)}>delete</button>
                     </div>
                 )
             })}
-            <button className="flex items-center p-1 w-full bg-white gap-3 justify-center rounded-md" onClick={pickUp}>Add Task <Plus /></button>
+            <button className="button-86" role="button" onClick={pickUp}>Add Task <Plus /></button>
             {modal && (<AddTask />)}
         </div>
     )

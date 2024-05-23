@@ -6,6 +6,6 @@ const todo = express.Router();
 todo.route('/create').post(createTodo);
 todo.route('/getAllTodo').get(getAllTodo);
 todo.route('/id').get(getTodo).get(getAllTodoById);
-todo.route('/deleteById/id').delete(deleteTodoById)
+todo.route('/deleteById/:id').delete(deleteTodoById)
 
 export { todo }
