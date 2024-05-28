@@ -5,7 +5,7 @@ const Dashboard = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex mx-auto max-w-screen-xl">
+      <div className="flex mx-auto w-[1440px]">
         <Aside />
         <Drawstack />
       </div>

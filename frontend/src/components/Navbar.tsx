@@ -4,7 +4,7 @@ import Icon from "@/images/Icon";
 
 export const Navbar = () => {
   return (
-    <div className="flex max-w-screen-xl justify-between items-center h-14 mx-auto">
+    <div className="flex w-[1440px] justify-between items-center h-14 mx-auto">
       <div className="flex gap-5 items-center">
         <Icon />
         <h1 className='text-2xl font-semibold'>Todo app</h1>

@@ -15,7 +15,7 @@ export const Drawstack = () => {
       const data = await response.json();
       setTodoData(data);
     } catch (error) {
-      throw new Error('error')
+      console.log(error);
     }
   }
   useEffect(() => {
